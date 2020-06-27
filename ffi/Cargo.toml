@@ -1,0 +1,27 @@
+[package]
+name = "rustic-dart-client"
+version = "0.1.0"
+authors = ["Max Jöhnk <maxjoehnk@gmail.com>"]
+edition = "2018"
+
+[lib]
+name = "rustic_dart"
+crate-type = ["cdylib", "staticlib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "0.2", features = ["rt-threaded"] }
+ffi_helpers = "0.2"
+allo-isolate = "0.1"
+lazy_static = "1.4"
+rustic-api = { git = "https://github.com/rustic-music-player/rustic.git" }
+rustic-native-http-client = { git = "https://github.com/rustic-music-player/rustic.git" }
+
+[build-dependencies]
+cbindgen = "0.14"
+dart-bindgen = "0.1"
+
+[patch.'https://github.com/rustic-music-player/rustic']
+rustic-api = { path = "../../rustic/core/api" }
+rustic-native-http-client = { path = "../../rustic/clients/http/native" }

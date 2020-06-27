@@ -1,0 +1,31 @@
+name: rustic_client
+description: A rustic client
+version: 0.0.1
+author:
+homepage:
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  ffi: ^0.1.3
+  isolate: ^2.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: io.rustic.client
+        pluginClass: RusticClientPlugin
+      ios:
+        pluginClass: RusticClientPlugin
